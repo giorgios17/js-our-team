@@ -31,29 +31,23 @@ const members = [
     }
 ];
 
-// function createCard(){
-//     element = document.createElement('div');
+function createCard(){
+    for(let i=0; i < members.length; i++){
+        const teamCard = document.createElement('div');
+        teamCard.className = 'team-card';
+        container.appendChild(teamCard);
+        const cardImage = document.createElement('div');
+        cardImage.className = 'card-image';
+        teamCard.appendChild(cardImage);
+        cardImage.innerHTML = `<img src="${members[i].foto}"/>`;
+        const cardText = document.createElement('div');
+        cardText.className = 'card-text';
+        teamCard.appendChild(cardText);
+        cardText.innerHTML = `<h3>${members[i].nome}</h3><p>${members[i].ruolo}</p>`;
+    }
+}
 
-
-// }
-
-//Creo il div team card
-const teamCard = document.createElement('div');
-teamCard.className = 'team-card';
-container.appendChild(teamCard);
-
-//Creo il div card image
-const cardImage = document.createElement('div');
-cardImage.className = 'card-image';
-teamCard.appendChild(cardImage);
-cardImage.innerHTML = `<img src="${members[1].foto}"/>`;
-
-//Creo il div card text
-const cardText = document.createElement('div');
-cardText.className = 'card-text';
-teamCard.appendChild(cardText);
-cardText.innerHTML = `<h3>${members[1].nome}</h3><p>${members[1].ruolo}</p>`;
-
+createCard();
 
 
 
