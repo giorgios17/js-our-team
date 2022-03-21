@@ -44,9 +44,9 @@ function createCard(){
         cardImage.className = 'card-image';
         teamCard.appendChild(cardImage);
         cardImage.innerHTML = `<img src="${members[i].foto}"/>`;
-        const cardText = document.createElement('div');
 
         //Creo il div card text
+        const cardText = document.createElement('div');
         cardText.className = 'card-text';
         teamCard.appendChild(cardText);
         cardText.innerHTML = `<h3>${members[i].nome}</h3><p>${members[i].ruolo}</p>`;
