@@ -4,6 +4,7 @@
 //la card di esempio presente nell'html, stampare dinamicamente una card per ogni membro del team.
 
 const container = document.querySelector('.team-container');
+const button = document.getElementById('addMemberButton');
 const members = [
     {nome: 'Wayne Barnett',
     ruolo: 'Founder & CEO',
@@ -53,6 +54,17 @@ function createCard(){
 }
 
 createCard();
+
+button.addEventListener('click', function(){
+    const newMember = {
+        nome: document.getElementById('name').value,
+        ruolo: document.getElementById('role').value,
+        foto: document.getElementById('image').value
+    }
+    members.push(newMember);
+    console.log(members);
+})
+
 
 
 
