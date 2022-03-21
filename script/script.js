@@ -68,7 +68,14 @@ button.addEventListener('click', function(){
     }
     members.push(newMember);
     createCard();
+    resetNewMember();
 })
+
+function resetNewMember(){
+    document.getElementById('name').value = '';
+    document.getElementById('role').value = '';
+    document.getElementById('image').value = '';
+}
 
 
 
