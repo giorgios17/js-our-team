@@ -3,6 +3,7 @@
 //Una volta definita la struttura dati, prendendo come riferimento 
 //la card di esempio presente nell'html, stampare dinamicamente una card per ogni membro del team.
 
+const container = document.querySelector('.team-container');
 const members = [
     {nome: 'Wayne Barnett',
     ruolo: 'Founder & CEO',
@@ -29,3 +30,30 @@ const members = [
     foto: 'img/barbara-ramos-graphic-designer.jpg'
     }
 ];
+
+// function createCard(){
+//     element = document.createElement('div');
+
+
+// }
+
+//Creo il div team card
+const teamCard = document.createElement('div');
+teamCard.className = 'team-card';
+container.appendChild(teamCard);
+
+//Creo il div card image
+const cardImage = document.createElement('div');
+cardImage.className = 'card-image';
+teamCard.appendChild(cardImage);
+cardImage.innerHTML = `<img src="${members[1].foto}"/>`;
+
+//Creo il div card text
+const cardText = document.createElement('div');
+cardText.className = 'card-text';
+teamCard.appendChild(cardText);
+cardText.innerHTML = `<h3>${members[1].nome}</h3><p>${members[1].ruolo}</p>`;
+
+
+
+
