@@ -33,14 +33,19 @@ const members = [
 
 function createCard(){
     for(let i=0; i < members.length; i++){
+        //Creo il div team card che contiene card image e card text
         const teamCard = document.createElement('div');
         teamCard.className = 'team-card';
         container.appendChild(teamCard);
+
+        //Creo il div card image
         const cardImage = document.createElement('div');
         cardImage.className = 'card-image';
         teamCard.appendChild(cardImage);
         cardImage.innerHTML = `<img src="${members[i].foto}"/>`;
         const cardText = document.createElement('div');
+
+        //Creo il div card text
         cardText.className = 'card-text';
         teamCard.appendChild(cardText);
         cardText.innerHTML = `<h3>${members[i].nome}</h3><p>${members[i].ruolo}</p>`;
