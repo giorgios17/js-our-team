@@ -35,6 +35,7 @@ const members = [
 createCard();
 
 function createCard(){
+    resetTeam();
     for(let i=0; i < members.length; i++){
         //Creo il div team card che contiene card image e card text
         const teamCard = document.createElement('div');
@@ -55,6 +56,9 @@ function createCard(){
     }
 }
 
+function resetTeam(){
+    container.innerHTML = '';
+}
 
 button.addEventListener('click', function(){
     const newMember = {
@@ -63,29 +67,8 @@ button.addEventListener('click', function(){
         foto: document.getElementById('image').value
     }
     members.push(newMember);
-    newMemberCreate()
-    console.log(members);
+    createCard();
 })
-
-function newMemberCreate (){
-     //Creo il div team card che contiene card image e card text
-     const teamCard = document.createElement('div');
-     teamCard.className = 'team-card';
-     container.appendChild(teamCard);
-
-     //Creo il div card image
-     const cardImage = document.createElement('div');
-     cardImage.className = 'card-image';
-     teamCard.appendChild(cardImage);
-     cardImage.innerHTML = `<img src="${members[members.length-1].foto}"/>`;
-
-     //Creo il div card text
-     const cardText = document.createElement('div');
-     cardText.className = 'card-text';
-     teamCard.appendChild(cardText);
-     cardText.innerHTML = `<h3>${members[members.length-1].nome}</h3><p>${members[members.length-1].ruolo}</p>`;
-}
-
 
 
 
