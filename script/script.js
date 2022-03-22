@@ -66,9 +66,15 @@ button.addEventListener('click', function(){
         ruolo: document.getElementById('role').value,
         foto: document.getElementById('image').value
     }
-    members.push(newMember);
-    createCard();
-    resetNewMember();
+    if(newMember.nome !== '' && newMember.ruolo !== '' && newMember.foto !== ''){
+        members.push(newMember);
+        createCard();
+        resetNewMember();
+    }
+    else{
+        alert('Uno o più campi sono vuoti')
+    }
+    
 })
 
 function resetNewMember(){
